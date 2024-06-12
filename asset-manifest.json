@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/dr1602/ProyectPlanner/static/css/main.3ad8b9d5.css",
+    "main.js": "/dr1602/ProyectPlanner/static/js/main.e6be49af.js",
+    "index.html": "/dr1602/ProyectPlanner/index.html",
+    "static/media/delete.svg": "/dr1602/ProyectPlanner/static/media/delete.331149da222541bc87c25bf8d775a070.svg",
+    "static/media/check.svg": "/dr1602/ProyectPlanner/static/media/check.fa4fb594b16385306a04b9c87c0feb55.svg",
+    "main.3ad8b9d5.css.map": "/dr1602/ProyectPlanner/static/css/main.3ad8b9d5.css.map",
+    "main.e6be49af.js.map": "/dr1602/ProyectPlanner/static/js/main.e6be49af.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3ad8b9d5.css",
+    "static/js/main.e6be49af.js"
+  ]
+}
