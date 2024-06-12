@@ -27,14 +27,20 @@ function useTodos() {
     });
   }
 
-  const addTodo = (text) => {
+  const addTodo = (text, date, teamMebmer) => {
     const newTodos = [...todos];
     newTodos.push({
       completed: false,
       text,
+      date,
+      teamMebmer,
     });
     saveTodos(newTodos);
+
+    console.log(newTodos)
   };
+
+
 
   const completeTodo = (text) => {
     const todoIndex = todos.findIndex(todo => todo.text === text);

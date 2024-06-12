@@ -5,5 +5,6 @@ import './index.css';
 
 ReactDOM.render(
   <App />,
+  // <App saludos='Salut' nombre='Rivskayeva'/>,
   document.getElementById('root')
 );

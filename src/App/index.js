@@ -1,6 +1,5 @@
 import React from 'react';
 import { useTodos } from './useTodos';
-import { TodoHeader } from '../TodoHeader';
 import { TodoCounter } from '../TodoCounter';
 import { TodoSearch } from '../TodoSearch';
 import { TodoList } from '../TodoList';
@@ -10,6 +9,7 @@ import { TodosLoading } from '../TodosLoading';
 import { EmptyTodos } from '../EmptyTodos';
 import { TodoForm } from '../TodoForm';
 import { CreateTodoButton } from '../CreateTodoButton';
+import { TodoHeader } from '../TodoHeader';
 import { Modal } from '../Modal';
 import { ChangeAlert } from '../ChangeAlert';
 
@@ -22,17 +22,18 @@ function App() {
     deleteTodo,
     openModal,
     setOpenModal,
-    totalTodos,
+    totalTodos, 
     completedTodos,
-    searchValue,
+    searchValue, 
     setSearchValue,
     addTodo,
-    sincronizeTodos,
+    sincronizeTodos
   } = useTodos();
-  
+
   return (
     <React.Fragment>
       <TodoHeader loading={loading}>
+        {/* ahora to header no define a sus hijos lo hace el componente principal con sus respectivas jerarquias para tener una mejor composicion de componentes */}
         <TodoCounter
           totalTodos={totalTodos}
           completedTodos={completedTodos}
@@ -46,30 +47,43 @@ function App() {
       <TodoList
         error={error}
         loading={loading}
-        totalTodos={totalTodos}
         searchedTodos={searchedTodos}
+        totalTodos={totalTodos}
         searchText={searchValue}
         onError={() => <TodosError />}
         onLoading={() => <TodosLoading />}
         onEmptyTodos={() => <EmptyTodos />}
         onEmptySearchResults={
-          (searchText) => <p>No hay resultados para {searchText}</p>
+          (searchText) => <p> No hay resultados para {searchText} </p>
         }
+        // render={todo => (
+        //   <TodoItem
+        //     key={todo.text}
+        //     text={todo.text}
+        //     completed={todo.completed}
+        //     onComplete={() => completeTodo(todo.text)}
+        //     onDelete={() => deleteTodo(todo.text)}
+        //   />
+        // )}
       >
+
         {todo => (
           <TodoItem
             key={todo.text}
             text={todo.text}
+            date={todo.date}
+            teamMebmer={todo.teamMebmer}
             completed={todo.completed}
             onComplete={() => completeTodo(todo.text)}
             onDelete={() => deleteTodo(todo.text)}
           />
         )}
+
       </TodoList>
 
       {!!openModal && (
         <Modal>
-          <TodoForm
+          <TodoForm 
             addTodo={addTodo}
             setOpenModal={setOpenModal}
           />
@@ -80,7 +94,7 @@ function App() {
         setOpenModal={setOpenModal}
       />
 
-      <ChangeAlert
+      <ChangeAlert 
         sincronize={sincronizeTodos}
       />
     </React.Fragment>

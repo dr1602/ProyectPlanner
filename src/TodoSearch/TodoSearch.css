@@ -3,8 +3,9 @@
   border-radius: 2px;
   border: 2px solid #202329;
   margin: 0 24px;
-  height: 64px;
+  height: 45px;
   width: calc(100% - 62px);
+  border-radius: 9px;
   font-size: 24px;
   text-align: center;
   font-family: 'Montserrat';
@@ -24,5 +25,12 @@
 }
 
 .TodoSearch:disabled {
-  opacity: 25%;
+  border: 2px solid red;
+  color: lightcoral !important;
+}
+
+@media (max-width: 750px) {
+  .TodoSearch {
+    height: 31px;
+  }
 }
