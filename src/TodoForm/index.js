@@ -2,6 +2,7 @@ import React from 'react';
 import './TodoForm.css';
 
 function TodoForm({ addTodo, setOpenModal }) {
+  // reducers aqui
   const [newTodoValue, setNewTodoValue] = React.useState('');
   const [newTodoDate, setNewTodoDate] = React.useState('');
   const [newTeamMember, setNewTeamMember] = React.useState('');

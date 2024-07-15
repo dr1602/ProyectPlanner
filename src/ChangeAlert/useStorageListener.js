@@ -1,7 +1,7 @@
-import React from 'react';
+import { useState } from 'react';
 
 function useStorageListener( sincronize ) {
-    const [storageChange, setStorageChange] = React.useState(false);
+    const [storageChange, setStorageChange] = useState(false);
 
     window.addEventListener('storage', (change) => {
         if(change.key === 'TODOS_V1') {

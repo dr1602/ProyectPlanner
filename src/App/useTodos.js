@@ -12,7 +12,12 @@ function useTodos() {
   const [searchValue, setSearchValue] = React.useState('');
   const [openModal, setOpenModal] = React.useState(false);
 
+  // estados derivados, que no llaman a su propio estado, usan la informacion que ya habiamos guardado
+  // y a partir de ahi hacen una cuenta un calculo, algo, que debemos guardar en estados derivados.
+
   const completedTodos = todos.filter(todo => !!todo.completed).length;
+
+  // no nuevos estados, variables que utilizaremos como si fueran un estado porque dependen de ellos
   const totalTodos = todos.length;
 
   let searchedTodos = [];
